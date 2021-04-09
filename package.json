@@ -1,0 +1,11 @@
+{
+  "name": "Training_note",
+  "version": "1.0.0",
+  "description": "circle ci and Elastic stack project",
+  "main": "index.js",
+  "author": "JUTABI",
+  "license": "MIT",
+  "dependencies": {
+  	"csv-parse": "^1.0.0"
+  }
+}
