@@ -5,6 +5,9 @@
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/data" />
+      <excludeFolder url="file://$MODULE_DIR$/logstash-7.12.0" />
+      <excludeFolder url="file://$MODULE_DIR$/source" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -6,6 +6,6 @@
   "author": "JUTABI",
   "license": "MIT",
   "dependencies": {
-    "csv-parse": "^1.0.0"
+    "csv-parse": "^4.15.3"
   }
 }
