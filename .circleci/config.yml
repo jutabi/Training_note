@@ -11,7 +11,8 @@ jobs:
       - checkout
       - run:
           name: node test
-          command: npm install
+          command: |
+          npm install
           node bin/csvtologs.js
 
 
