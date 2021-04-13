@@ -1,7 +1,7 @@
 let fs = require('fs');
 let parse = require('csv-parse');
 
-let f1to4 = fs.readFileSync('source/training_note.csv', 'utf8');
+let f1to4 = fs.readFileSync('../source/training_note.csv', 'utf8');
 
 parse(f1to4, {comment:"#"}, function(csv_err, csv_data) {
 	if (csv_err) {
@@ -39,7 +39,7 @@ parse(f1to4, {comment:"#"}, function(csv_err, csv_data) {
 		}
 
 		let logData = JSON.stringify(jsonTemp)+"\n";
-		fs.appendFileSync("data/training_note.logs", logData);
+		fs.appendFileSync("../data/training_note.logs", logData);
 		// fs.writeFileSync("../data/training_note.logs", logData);
 	}
 });

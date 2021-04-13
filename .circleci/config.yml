@@ -13,7 +13,8 @@ jobs:
           name: node test
           command: |
             npm install
-            node bin/csvtologs.js
+            cd bin
+            node csvtologs.js
 
 
 workflows:
