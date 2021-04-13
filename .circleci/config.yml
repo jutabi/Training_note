@@ -12,8 +12,8 @@ jobs:
       - run:
           name: node test
           command: |
-          npm install
-          node bin/csvtologs.js
+            npm install
+            node bin/csvtologs.js
 
 
 workflows:
