@@ -21,18 +21,20 @@ jobs:
       - persist_to_workspace:
           root: tmp
           paths:
-            - training_note.logs
+            - .
   logstash:
     docker:
       - image: logstash:7.12.0
     steps:
       - attach_workspace:
-          at: /tmp
+          at: tmp
       - run:
           name: Logstash
           command: |
             ls -al
             pwd
+            cd /home/circleci/project/tmp
+            ls -al
 
 
 workflows:
