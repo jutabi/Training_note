@@ -20,7 +20,7 @@ jobs:
             pwd
             cat tmp/training_note.logs
       - persist_to_workspace:
-          root: tmp
+          root: bin/tmp
           paths:
             - .
   logstash:
