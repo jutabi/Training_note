@@ -35,7 +35,7 @@ jobs:
             ls -al
             pwd
             cd workspace
-            ls -al
+            cat training_note.logs
 
 
 workflows:
