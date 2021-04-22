@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Logstash
           command: |
-            cd data
+            cat /home/circleci/project/tmp/training_note.logs
 
 
 workflows:
