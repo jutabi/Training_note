@@ -17,6 +17,7 @@ jobs:
             ls -al
             mkdir /home/circleci/project/tmp
             cp ../data/training_note.logs /home/circleci/project/tmp/
+            cat /home/circleci/project/tmp/training_note.logs
       - persist_to_workspace:
           root: tmp
           paths:
@@ -31,7 +32,7 @@ jobs:
           name: Logstash
           command: |
             ls -al
-            cat /home/circleci/project/tmp/training_note.logs
+            pwd
 
 
 workflows:
