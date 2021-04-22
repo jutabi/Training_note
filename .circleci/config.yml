@@ -12,6 +12,7 @@ jobs:
           name: Create logs file
           command: |
             npm install
+            mkdir tmp
             cd bin
             node csvtologs.js
       - persist_to_workspace:
