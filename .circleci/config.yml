@@ -17,6 +17,7 @@ jobs:
             ls -al
             mkdir tmp
             cp ../data/training_note.logs tmp/
+            pwd
             cat tmp/training_note.logs
       - persist_to_workspace:
           root: .
