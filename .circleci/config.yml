@@ -4,7 +4,6 @@ orbs:
 
 jobs:
   node:
-    executor:
     docker:
       - image: circleci/node:latest
     steps:
@@ -15,15 +14,28 @@ jobs:
             npm install
             cd bin
             node csvtologs.js
+            ls -al
+            mkdir tmp
+            cp ../data/training_note.logs tmp/
+            pwd
+            cat tmp/training_note.logs
+      - persist_to_workspace:
+          root: bin/tmp
+          paths:
+            - .
   logstash:
     docker:
       - image: logstash:7.12.0
     steps:
-      - checkout
+      - attach_workspace:
+          at: workspace
       - run:
           name: Logstash
           command: |
-            cd config
+            ls -al
+            pwd
+            cd workspace
+            cat training_note.logs
 
 
 workflows:
