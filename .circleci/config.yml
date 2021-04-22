@@ -14,10 +14,8 @@ jobs:
             npm install
             cd bin
             node csvtologs.js
-            ls
-            mkdir tmp
-            ls
-            cp ../data/training_note.logs tmp
+            ls -al
+            cp ../data/training_note.logs /home/circleci/project/tmp
       - persist_to_workspace:
           root: tmp
           paths:
@@ -31,8 +29,8 @@ jobs:
       - run:
           name: Logstash
           command: |
-            ls
-            cat /tmp/training_note.logs
+            ls -al
+            cat /home/circleci/project/tmp/training_note.logs
 
 
 workflows:
