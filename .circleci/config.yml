@@ -12,10 +12,12 @@ jobs:
           name: Create logs file
           command: |
             npm install
-            mkdir tmp
             cd bin
             node csvtologs.js
-            cp ../data/training_note.logs /home/circleci/project/tmp
+            ls
+            mkdir tmp
+            ls
+            cp ../data/training_note.logs tmp
       - persist_to_workspace:
           root: tmp
           paths:
@@ -29,7 +31,8 @@ jobs:
       - run:
           name: Logstash
           command: |
-            cat /home/circleci/project/tmp/training_note.logs
+            ls
+            cat /tmp/training_note.logs
 
 
 workflows:
