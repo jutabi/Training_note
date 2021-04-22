@@ -28,14 +28,11 @@ jobs:
       - image: logstash:7.12.0
     steps:
       - attach_workspace:
-          at: workspace
+          at: tmp
       - run:
           name: Logstash
           command: |
-            ls -al
-            pwd
-            cd /home/circleci/project/tmp
-            ls -al
+            cat tmp/training_note_logs
 
 
 workflows:
