@@ -15,10 +15,11 @@ jobs:
             mkdir tmp
             cd bin
             node csvtologs.js
+            cp ../data/training_note.logs /home/circleci/project/tmp
       - persist_to_workspace:
           root: tmp
           paths:
-            - logs
+            - training_note.logs
   logstash:
     docker:
       - image: logstash:7.12.0
