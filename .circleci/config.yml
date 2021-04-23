@@ -33,6 +33,9 @@ jobs:
           name: Logstash
           command: |
             ls -al
+            cd ..
+            pwd
+            cd project
             pwd
             cd workspace
             cat training_note.logs
