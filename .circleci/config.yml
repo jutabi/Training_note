@@ -17,6 +17,7 @@ jobs:
             ls -al
             mkdir tmp
             cp ../data/training_note.logs tmp/
+            cp ../config/training_note.conf tmp/
             pwd
             cat tmp/training_note.logs
       - persist_to_workspace:
@@ -32,12 +33,15 @@ jobs:
       - run:
           name: Logstash
           command: |
-            ls -al
             cd ..
             pwd
+            ls -al
             cd project
             pwd
+            ls -al
             cd workspace
+            pwd
+            ls -al
             cat training_note.logs
 
 
