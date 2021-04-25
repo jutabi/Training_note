@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  elasticsearch:
+    image: elasticsearch:lastest
+    container_name: elasitcsearch
+    ports:
+      - "9200:9200"
+
+  logstash:
+    image: logstash:latest
+    container_name: logstash
+    volumes:
+      - /Training_note/config:/usr/share/logstash/project/config
+    ports:
+      - "5000:5000"
+
+  kibana:
+    image: kibana:latest
+    container_name: kibana
+    ports:
+      - "5601:5601"
