@@ -26,7 +26,7 @@ services:
 #      - /Training_note/docker/logstash-data:/usr/share/logstash/logstash-data
 #      - /Training_note/docker/customConf:/usr/share/logstash/customConf
     ports:
-      - "5604:9600"
+      - "5603:9600"
     networks:
       - elastic
     depends_on:
