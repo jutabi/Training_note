@@ -1,0 +1,51 @@
+version: "3.7"
+services:
+  elasticsearch:
+    image: elasticsearch:7.12.0
+    container_name: elasticsearch
+    environment:
+      - node.name=elasticsearch
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "5602:9200"
+    networks:
+      - elastic
+
+  logstash:
+    image: logstash:7.12.0
+    container_name: logstash
+#    volumes:
+#      - C:/Users/simi7/Documents/GitHub/Training_note/docker/pipeline:/usr/share/logstash/pipeline
+#      - /Training_note/docker/logstash-data:/usr/share/logstash/logstash-data
+#      - /Training_note/docker/customConf:/usr/share/logstash/customConf
+    ports:
+      - "5604:9600"
+    networks:
+      - elastic
+    depends_on:
+      - elasticsearch
+
+  kibana:
+    image: kibana:7.12.0
+    container_name: kibana
+    environment:
+      SERVERNAME: localhost
+#      ELASTICSEARCH_URL: http://elasticsearch:5602
+      ELASTICSEARCH_HOSTS: http://192.168.0.153:5602
+    ports:
+      - "5601:5601"
+    networks:
+      - elastic
+    depends_on:
+      - elasticsearch
+
+networks:
+  elastic:
+    driver: bridge

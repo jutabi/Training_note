@@ -12,3 +12,7 @@
 - 서버, elk 동시에 docker-compose 이용하여 실행
     - 가능하다면 kubernetes 실습
 - circleci 활용방법 생각해보기
+
+### +elasticsearch docker memory err
+1. wsl -d docker-desktop
+2. sysctl -w vm.max_map_count=262144
