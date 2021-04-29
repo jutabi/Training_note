@@ -22,11 +22,11 @@ services:
     image: logstash:7.12.0
     container_name: logstash
     volumes:
-      - ./pipeline:/usr/share/logstash/pipeline
       - ../source:/usr/share/logstash/dataSource
       - ../data:/usr/share/logstash/logData
-#      - /Training_note/docker/logstash-data:/usr/share/logstash/logstash-data
-#      - /Training_note/docker/customConf:/usr/share/logstash/customConf
+      - ./pipeline:/usr/share/logstash/pipeline
+#      - ./logstash-data:/usr/share/logstash/logstash-data
+#      - ./customConf:/usr/share/logstash/customConf
     ports:
       - "5603:9600"
     networks:
