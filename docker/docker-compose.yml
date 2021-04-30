@@ -5,10 +5,15 @@ services:
     container_name: elasticsearch
     environment:
       - node.name=elasticsearch
+#      elasticsearch cluster setting (single node)
       - discovery.type=single-node
       - bootstrap.memory_lock=true
-      - xpack.security.enabled=false
+#      elastic security setting
+      - xpack.security.enabled=true
+      - ELASTIC_PASSWORD=test1234
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - ./elasticsearch/data:/usr/share/elasticsearch/data
     ulimits:
       memlock:
         soft: -1
@@ -24,8 +29,8 @@ services:
     volumes:
       - ../source:/usr/share/logstash/dataSource
       - ../data:/usr/share/logstash/logData
-      - ./pipeline:/usr/share/logstash/pipeline
-#      - ./logstash-data:/usr/share/logstash/logstash-data
+      - ./logstash/pipeline:/usr/share/logstash/pipeline
+      - ./logstash/data:/usr/share/logstash/data
 #      - ./customConf:/usr/share/logstash/customConf
     ports:
       - "5603:9600"
@@ -38,8 +43,16 @@ services:
     image: kibana:7.12.0
     container_name: kibana
     environment:
-      SERVERNAME: localhost
-      ELASTICSEARCH_HOSTS: http://192.168.0.153:5602
+#      - servername=localhost
+#      - elasticsearch.hosts=http://elasticsearch:9200
+#      - elasticsearch.username=kibana_system
+#      - elasticsearch.password=test1234
+      SERVERNAME: kibana
+      ELASTICSEARCH_USERNAME: "elastic"
+      ELASTICSEARCH_PASSWORD: "test1234"
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+    volumes:
+      - ./kibana/data:/usr/share/kibana/data
     ports:
       - "5601:5601"
     networks:
@@ -49,4 +62,3 @@ services:
 
 networks:
   elastic:
-    driver: bridge
