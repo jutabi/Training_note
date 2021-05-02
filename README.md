@@ -10,7 +10,7 @@
 - (X) 가능하다면 kubernetes 실습
 - (X) circleci 활용방법 생각해보기
 - (O) enable elasticsearch security
-  - (X) docker-compose .env file
+  - (O) docker-compose .env file
 
 ### +elasticsearch docker memory err
 1. wsl -d docker-desktop

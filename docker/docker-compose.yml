@@ -10,7 +10,9 @@ services:
       - bootstrap.memory_lock=true
 #      elastic security setting
       - xpack.security.enabled=true
-      - ELASTIC_PASSWORD=test1234
+#      - ELASTIC_PASSWORD=test1234
+#      - ELASTIC_PASSWORD=${PASSWORD}
+      - ELASTIC_PASSWORD
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     volumes:
       - ./elasticsearch/data:/usr/share/elasticsearch/data
@@ -43,13 +45,19 @@ services:
     image: kibana:7.12.0
     container_name: kibana
     environment:
-#      - servername=localhost
-#      - elasticsearch.hosts=http://elasticsearch:9200
-#      - elasticsearch.username=kibana_system
-#      - elasticsearch.password=test1234
-      SERVERNAME: kibana
-      ELASTICSEARCH_USERNAME: "elastic"
-      ELASTICSEARCH_PASSWORD: "test1234"
+#      - 1
+#      - SERVER_NAME=kibana
+#      - ELASTICSEARCH_USERNAME=elastic
+#      - ELASTICSEARCH_PASSWORD=test1234
+##      - ELASTICSEARCH_USERNAME
+##      - ELASTICSEARCH_PASSWORD
+#      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+#      - 2
+      SERVER_NAME: kibana
+#      ELASTICSEARCH_USERNAME: "elastic"
+#      ELASTICSEARCH_PASSWORD: "test1234"
+      ELASTICSEARCH_USERNAME:
+      ELASTICSEARCH_PASSWORD:
       ELASTICSEARCH_HOSTS: http://elasticsearch:9200
     volumes:
       - ./kibana/data:/usr/share/kibana/data
