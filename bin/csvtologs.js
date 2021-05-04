@@ -48,7 +48,7 @@ fs.readFile('../source/training_note.csv', 'utf8', function (err, csvFile) {
 				}
 			}
 		}
-		fs.writeFileSync("../data/training_note.logs", "");
+		// fs.writeFileSync("../data/training_note.logs", "");
 
 		//세번째 줄부터 (2) 데이터 시작, 하루씩 날짜 증가
 		for (let i = readDateStartIndex; i < csv_data.length; i++) {
