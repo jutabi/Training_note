@@ -1,7 +1,6 @@
 ### TODO
 - (O) elastic stack (e, l, k) docker-compose
-- (O) docker-compose volume 마운트를 사용하고, 
-  logstash 의 sincedb_path 를 사용
+- (O) docker-compose volume 마운트를 사용,  logstash 의 sincedb_path 를 사용
 - (O) docker-compose logstash volume 설정 (logstash/pipeline/*.config)
 - (O) enable elasticsearch security
   - (O) docker-compose .env file
