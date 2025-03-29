@@ -8,6 +8,7 @@
 - (X) 서버, elk 동시에 docker-compose 이용하여 실행
   - (X) 가능하다면 kubernetes 실습
 - (X) circleci 활용방법 생각해보기
+- (X) 운동기록 어플 생성, 서버 연동하기
 
 ### +elasticsearch docker memory err
 1. wsl -d docker-desktop
