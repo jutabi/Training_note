@@ -9,6 +9,7 @@
   - (X) 가능하다면 kubernetes 실습
 - (X) circleci 활용방법 생각해보기
 - (X) 운동기록 어플 생성, 서버 연동하기
+- (X) django 를 사용하여 서버 만들기
 
 ### +elasticsearch docker memory err
 1. wsl -d docker-desktop
