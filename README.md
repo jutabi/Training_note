@@ -11,6 +11,6 @@
 - (X) 운동기록 어플 생성, 서버 연동하기
 - (X) django 를 사용하여 서버 만들기
 
-### +elasticsearch docker memory err
+### Elasticsearch docker memory error 解決
 1. wsl -d docker-desktop
 2. sysctl -w vm.max_map_count=262144
